@@ -60,7 +60,80 @@ int main() {
                 continue;  // Retorna para o menu principal
             }
         }
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+        if(navigation==2){
+            clear();
+            int *nav_push_down;
+
+            printf("[1]Catalog\n");
+            printf("[2]Remove\n");
+            printf("[0]Back");
+
+            if (&nav_push_down==1){
+                clear();
+                //criar funcao para nao perder a linha 
+                char *push_BOOK[101];
+                char *push_SECTION[51];
+                
+                printf("Digit name Book:");
+                scanf("%c",&push_BOOK);
+                printf("\n");
+                printf("Enter the physical session:");
+                scanf("%c",&push_BOOK);
+                printf("\n");
+
+                clear();
+                //var type bool
+                int submit;
+                printf("==========Upload==============\n");
+                printf("[1]Upload");
+                printf("[2]Cancel");
+                printf("Confirm shipping:");
+                scanf("%i");
+                clear();
+
+                if (submit==1)
+                {
+                    //criar funcao submit do push
+                }
+                if (submit==2){
+                    //criar funcao para cancelar a subida do arquivo
+                }
+
+                
+                free(*push_BOOK);
+                free(*push_SECTION);
+
+                continue;
+
+            }
+            if(&nav_push_down==2){
+                //so precisa do ID para manipular a linha.
+                clear();
+                int down_ID;
+
+                printf("");
+
+                free(down_ID);
+                clear();
+                continue;
+            }
+            if(&nav_push_down==0){
+                clear();
+                continue;
+
+            }
+            else{
+                showInvalidInput();
+
+            }
+
+        }
         
+
+//-----------------------------------------------------------------------------------------------------------------------------//
+
         //Para sair do programa.
         else if (navigation == 99) {
            
@@ -82,6 +155,7 @@ int main() {
 void startscreen(int *navigation) {
     printf("======= Local Library System ========\n");
     printf("[1] Library\n");
+    printf("[2] Catalog or remove Book's\n");
     printf("[99] Exit\n");
     printf("What do you want to access? ");
     scanf("%d", navigation);
